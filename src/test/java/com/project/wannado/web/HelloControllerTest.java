@@ -1,4 +1,4 @@
-package com.project.wannado.controller;
+package com.project.wannado.web;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

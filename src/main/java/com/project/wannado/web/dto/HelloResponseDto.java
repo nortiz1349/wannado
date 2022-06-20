@@ -1,4 +1,4 @@
-package com.project.wannado.controller.dto;
+package com.project.wannado.web.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

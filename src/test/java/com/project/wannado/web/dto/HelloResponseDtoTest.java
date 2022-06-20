@@ -1,4 +1,4 @@
-package com.project.wannado.controller.dto;
+package com.project.wannado.web.dto;
 
 import org.junit.jupiter.api.Test;
 
