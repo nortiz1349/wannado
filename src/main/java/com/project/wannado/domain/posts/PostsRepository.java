@@ -1,6 +1,9 @@
 package com.project.wannado.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
 
 /**
  * MyBatis - Dao 에 해당하는 DB Layer 접근자
@@ -11,4 +14,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Entity 클래스(Posts.java)는 기본 Repository 없이는 역할을 할 수 없다.
  */
 public interface PostsRepository extends JpaRepository<Posts, Long> {
+
+    @Query("SELECT p FROM Posts p ORDER BY p.id DESC")
+    List<Posts> findAllDesc();
 }

@@ -1,0 +1,40 @@
+{{>layout/header}}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Test Board</h1>
+        <p class="lead">Springboot, Gradle, Mustache, h2, jpa, lombok</p>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+        </div>
+    </div>
+</div>
+<br>
+<!-- 목록 출력 영역 -->
+<table class="table table-horizontal table-bordered">
+    <thead class="thead-strong">
+    <tr>
+        <th>게시글번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>최종수정일</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    {{#posts}}  <!-- 머스테치 문법. posts 라는 List 를 순회한다. For 문과 동일. -->
+        <tr>    <!-- List 에서 뽑아낸 객체의 필드를 사용한다. -->
+            <td>{{id}}</td>
+            <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+            <td>{{author}}</td>
+            <td>{{modifiedDate}}</td>
+        </tr>
+    {{/posts}}
+    </tbody>
+</table>
+</div>
+
+{{>layout/footer}}
