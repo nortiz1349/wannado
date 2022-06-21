@@ -9,7 +9,7 @@ import javax.persistence.*;
 /**
  * `@Entity
  * 테이블과 링크될 클래스임을 나타낸다.
- * 기본값으로 클래스의 카멜케이스 네이밍을 언더스코어 네이밍으로 매칭한다. ex) SalesManeger.java -> sales_manager table
+ * 기본값으로 클래스의 카멜케이스 네이밍을 언더스코어 네이밍으로 매칭한다. ex) SalesManager.java -> sales_manager table
  *
  * `@Id
  * 해당 테이블의 PK 필드를 나타낸다.
@@ -17,7 +17,7 @@ import javax.persistence.*;
  * `@GeneratedValue
  * PK 생성 규칙을 나타낸다.
  * 스프링부트 2.0에서는 GenerationType.IDENTITY 옵션을 추가해야 auto_increment 된다.
- * Entity 의 PK는 Long 타입의 Auto_increment를 추천. (MySql 기준으로 bigint 타입)
+ * Entity 의 PK는 Long 타입의 Auto_increment 를 추천. (MySql 기준으로 bigint 타입)
  *
  * `@Column
  * 테이블의 칼럼을 나타내며 굳이 선언하지 않더라도 해당 클래스의 필드는 모두 칼럼이 된다.
@@ -56,5 +56,10 @@ public class Posts {
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }
