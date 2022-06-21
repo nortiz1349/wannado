@@ -1,11 +1,3 @@
-package com.project.wannado.domain.posts;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-
 /**
  * `@Entity
  * 테이블과 링크될 클래스임을 나타낸다.
@@ -34,10 +26,19 @@ import javax.persistence.*;
  * 생성자 상단에 선언 시 생성자에 포함된 필드만 빌더에 포함.
  */
 
+package com.project.wannado.domain.posts;
+
+import com.project.wannado.domain.BaseTimeEntity;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
