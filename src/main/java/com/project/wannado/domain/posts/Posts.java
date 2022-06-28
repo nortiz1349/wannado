@@ -1,4 +1,7 @@
 /**
+ * 2. 도메인 클래스 (요구사항에 대한 영역)
+ * 기존에 사용했던 Mybatis 의 쿼리 매퍼(dao 패키지)를 쿼리문 없이 도메인 클래스의 JPA 어노테이션과 코드로 구현함.
+ *
  * `@Entity
  * 테이블과 링크될 클래스임을 나타낸다.
  * 기본값으로 클래스의 카멜케이스 네이밍을 언더스코어 네이밍으로 매칭한다. ex) SalesManager.java -> sales_manager table
@@ -35,9 +38,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Getter
-@NoArgsConstructor
-@Entity
+@Getter // lombok
+@NoArgsConstructor  // lombok
+@Entity // JPA
 public class Posts extends BaseTimeEntity {
 
     @Id
